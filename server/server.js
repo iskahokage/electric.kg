@@ -1,4 +1,4 @@
-require('dotenv').config
+require('dotenv/config')
 const express = require('express')
 const routes = require('./routes/index.js')
 const app = express()
@@ -17,7 +17,7 @@ const run = async ()=>{
         app.listen(PORT, ()=>{
             console.log(`==========back started=========== ${PORT}`)
         })        
-        mongoose.connect("mongodb://localhost/mongoose",
+        mongoose.connect("mongodb://localhost:27017/mongoose",
             ()=>{
             console.log('Mongoose connected')
         })
