@@ -1,0 +1,48 @@
+.message-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 500px;
+  height: 220px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: transparent;
+  border: 3px solid #212122;
+  box-shadow: 0.5rem 0.5rem 0 #212121;
+}
+.message-form input[type=number]::-webkit-outer-spin-button,
+.message-form input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.message-form input[type=number],
+.message-form input[type=number]:hover,
+.message-form input[type=number]:focus {
+  -webkit-appearance: none;
+          appearance: none;
+  -moz-appearance: textfield;
+}
+.message-form .title-container {
+  display: flex;
+  align-items: center;
+}
+.message-form .message-icon {
+  width: 30px;
+}
+.message-form .message-input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+  font-size: 16px;
+  overflow-y: hidden;
+  resize: none;
+}
+.message-form .message-input::-moz-placeholder {
+  font-weight: normal;
+}
+.message-form .message-input:-ms-input-placeholder {
+  font-weight: normal;
+}
+.message-form .message-input::placeholder {
+  font-weight: normal;
+}/*# sourceMappingURL=Message.css.map */

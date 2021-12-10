@@ -1,0 +1,47 @@
+.message-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 500px;
+  height: 220px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: transparent;
+  border: 3px solid #212122;
+  box-shadow: .5rem .5rem 0 #212121 ;
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none; // Yeah, yeah everybody write about it
+  }
+
+  input[type="number"],
+  input[type="number"]:hover,
+  input[type="number"]:focus {
+    appearance: none;
+    -moz-appearance: textfield;
+  }
+
+
+
+  .title-container{
+    display: flex;
+    align-items: center;
+  }
+  .message-icon{
+      width: 30px;
+
+  }
+  .message-input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    font-size: 16px;
+    overflow-y: hidden;
+    resize: none;
+    &::placeholder {
+      font-weight: normal;
+    }
+  }
+}
