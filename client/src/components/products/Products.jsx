@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
+
+import { postContext } from '../../context/PostContext';
+
 
 const Products = () => {
+    const {posts, getPost}  = useContext(postContext);
+    useEffect(()=>{
+        getPost()
+    }, [])
     return (
         <div className='products'>
             <p className='services-title'>Предостовляемые услуги:</p>
             <div className='products-container'>
-                <div className="card">
-                    <div className='card-layout'>
-                        <p className='card-title'>Установка теплого пола</p>
-                    </div>
-                </div>
+                {
+                    posts.map((item)=>(
+                        <div className="card">
+                            <div className='card-layout'>
+                                <img src={item.operationImage} alt="" />
+                                <p className='card-title'>{item.operationName}</p>
+                            </div>
+                        </div>
+                    ))
+                }
             </div>
         </div>
     );

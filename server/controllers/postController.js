@@ -10,5 +10,9 @@ class PostController{
             console.error(error)
         }
     }
+    static getAll = async(req, res)=>{
+        let posts = await PostService.getAll()
+        return res.json(posts)
+    }
 }
 module.exports = PostController;

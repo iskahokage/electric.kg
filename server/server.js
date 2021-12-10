@@ -17,7 +17,7 @@ const run = async ()=>{
         app.listen(PORT, ()=>{
             console.log(`==========back started=========== ${PORT}`)
         })        
-        mongoose.connect("mongodb://localhost:27017/mongoose",
+        mongoose.connect("mongodb+srv://4ikirindo4i:4ikirindo4i@electrickgcluster.ggexu.mongodb.net/ElectricKGCluster?retryWrites=true&w=majority",
             ()=>{
             console.log('Mongoose connected')
         })
