@@ -6,5 +6,5 @@ const router = express.Router();
 
 router.post('/', PostController.create)
 router.get('/', PostController.getAll)
-
+router.delete('/:_id',PostController.delete)
 module.exports = router

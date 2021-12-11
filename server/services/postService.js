@@ -13,5 +13,10 @@ class PostService {
             operationImage: operationImage
         })
     }
+    static delete = async({_id})=>{
+        return await Posts.deleteOne({
+            _id: _id
+        })
+    }
 }
 module.exports = PostService;
