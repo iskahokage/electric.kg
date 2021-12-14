@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 
 import { postContext } from '../../context/PostContext';
-
+import {API} from '../../consts.js'
 
 const Products = () => {
     const {posts, getPost}  = useContext(postContext);
@@ -16,7 +16,8 @@ const Products = () => {
                     posts.map((item)=>(
                         <div className="card">
                             <div className='card-layout'>
-                                <img src={item.operationImage} alt="" />
+                                <img className='card-img' src={`${API}/${item.operationImage}`} alt="" />
+                                <div className="card-layout"></div>
                                 <p className='card-title'>{item.operationName}</p>
                             </div>
                         </div>

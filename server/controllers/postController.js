@@ -1,11 +1,18 @@
+const uuid = require('uuid')
+const path = require('path')
+const multer = require('multer')
 const PostService = require('../services/postService.js');
 
 class PostController{
     static create = async(req,res)=>{
         try {
-            let {operationName, operationImage} = req.body;
-            let post = await PostService.create({operationName, operationImage});
-            return res.json(await post.save())
+            const {operationName} = req.body;
+            const {operationImage} = req.files
+            let imgName = uuid.v4() + ".jpg"
+            operationImage.mv(path.resolve(__dirname, '..', 'static', imgName))
+            let post = await PostService.create({operationName, operationImage: imgName});
+            await post.save()
+            return res.json(post)
         } catch (error) {
             console.error(error)
         }

@@ -15,15 +15,24 @@
             &:hover{
                 .card-title{
                     font-weight: bold;
+                    color:#fff;
+                    transition:color .3s linear;
                 }
                 .card-layout{
-                    border-radius:10px;
                     background-color: rgba($color: #000000, $alpha: 0.5);
+                    border-radius:6px;
                     width: 100%;
                     height: 100%;
+                    position: relative;
                 }
             }
             .card-layout{
+                .card-img{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 6px;
+                }
                 .card-title{
                     position: absolute;
                     text-align: center;
@@ -31,6 +40,7 @@
                     left: 50%;            
                     transform: translate(-50%, -50%);
                     width: 100%;
+                    font-weight: bold;
                 }
             }
         }
