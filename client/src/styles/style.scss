@@ -2,13 +2,15 @@
 @import '../components/header/assets/Header.scss';
 @import '../components/products/assets/Products.scss';
 @import '../components/message/assets/Message.scss';
-
+@import '../pages/loginPage/assets/LoginPage.scss';
+@import '../components/auth/assets/Login.scss';
 
 *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
     font-family: $montserrat;
+    color: #000;
 }
 body{
     background-color: $mainbgc;

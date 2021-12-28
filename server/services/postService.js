@@ -1,9 +1,9 @@
-const Posts = require('../schemas/postShema.js')
+const Posts = require('../schemas/postSchema.js')
 
 class PostService {
-    static findAll = async({operationName, operationImage})=>{
-        return await Posts.findOne({operationName: operationName, operationImage: operationImage})
-    }
+    // static findAll = async({operationName, operationImage})=>{
+    //     return await Posts.findOne({operationName: operationName, operationImage: operationImage})
+    // }
     static getAll = async()=>{
         return await Posts.find()
     }   

@@ -30,12 +30,22 @@ const PostContextProvider = ({children}) => {
         })
     }
 
+    const createPost = async(newPost)=>{
+        let post = await axios.post(`${API}/posts`, newPost)
+    }
+
+    const deletePost = async(id)=>{
+        await axios.delete(`${API}/posts/${id}`)
+        getPost()
+    }
 
     return (
         <postContext.Provider
             value={{
                 posts: state.posts,
-                getPost
+                getPost,
+                createPost,
+                deletePost
             }}
         >
             {children}

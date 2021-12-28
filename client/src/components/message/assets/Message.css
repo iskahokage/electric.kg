@@ -1,3 +1,7 @@
+.message {
+  background-color: transparent;
+}
+
 .message-form {
   display: flex;
   flex-direction: column;

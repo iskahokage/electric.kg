@@ -6,6 +6,8 @@ import './styles/style.css';
 import './components/header/assets/Header.css';
 import './components/products/assets/Products.css';
 import './components/message/assets/Message.css';
+import './components/auth/assets/Login.css';
+
 
 ReactDOM.render(
   <React.StrictMode>
