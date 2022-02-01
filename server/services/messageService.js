@@ -1,18 +1,18 @@
-const Messages = require('../schemas/messageSchema.js');
+// const {} = require('../schemas/messageSchema.js');
 
 class MessageService{
-    static getAll = async()=>{
-        return await Messages.find()
+    static getAllMessages = async()=>{
+        return await MessageSchema.find()
     }
-    static create = async({email, phone, message})=>{
-        return await Messages.create({
+    static createMessage = async({email, phone, message})=>{
+        return await MessageSchema.create({
             email: email,
             phone: phone, 
             message: message
         })
     }
-    static delete = async(_id)=>{
-        return await Messages.deleteOne({
+    static deleteMessage = async(_id)=>{
+        return await MessageSchema.deleteOne({
             _id: _id
         })
     }

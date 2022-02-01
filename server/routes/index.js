@@ -2,11 +2,20 @@ const express = require('express');
 
 const router = express.Router();
 
-const postRoute = require('./postRoute.js')
+const servicesRoute = require('./servicesRoute.js')
 
 const messageRoute = require('./messageRoute.js')
-router.use('/posts', postRoute);
-router.use('/messages', messageRoute);
 
+const authRoute = require('./authRoute.js')
+
+const projectRoute = require('./projectRoute.js')
+
+const productRoute = require('./productRoute.js')
+
+router.use('/', authRoute)
+router.use('/services', servicesRoute);
+router.use('/messages', messageRoute);
+router.use('/projects', projectRoute);
+router.use('/products', productRoute)
 
 module.exports = router;
