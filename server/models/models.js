@@ -39,7 +39,7 @@ const Project_image = sequelize.define("project_image",{
 const Appeal = sequelize.define("appeal", {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     name: {type: DataTypes.STRING},
-    phone: {type: DataTypes.INTEGER},
+    phone: {type: DataTypes.STRING},
     content: {type: DataTypes.STRING},
 })
 
