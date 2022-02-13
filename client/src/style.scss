@@ -11,9 +11,19 @@
     box-sizing: border-box;
     font-family: 'Comfortaa', cursive;
 }
+.App{
+    position: relative;
+}
 .container{
+    .title{
+        text-align: center;
+        font-size: 20px;
+        font-weight: 700;
+        padding-top: 50px;
+    }
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
+    min-height: calc(100vh - 310px);
 }
 $mainbgc: #2196F3;

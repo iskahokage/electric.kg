@@ -9,7 +9,7 @@ const Home = () => {
         <div className="container">
             <section className="section first">
                 <p>
-                    Наша команда работает больше 30 лет на рынке Кыргызстана.<br />
+                    Наша команда работает больше 10 лет на рынке Кыргызстана.<br />
                     Делаем свою работу качественно.
                 </p>
                 <div className="img-container">

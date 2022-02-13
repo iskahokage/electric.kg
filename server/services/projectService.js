@@ -3,7 +3,7 @@ const {Project, Project_image} = require('../models/models.js')
 class ProjectService{
 
     static getAll = async()=>{
-        return await Project.findAll();
+        return await Project.findAll({include: ["project_images"]});
     }
 
     static create = async({name, description})=>{

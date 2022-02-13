@@ -50,8 +50,11 @@ Product.belongsTo(User)
 User.hasOne(Service)
 Service.belongsTo(User)
 
-Project.hasMany(Project_image, { onDelete: 'cascade'})
-Project_image.belongsTo(Project)
+Project.hasMany(Project_image, {as: "project_images", onDelete: 'cascade'})
+Project_image.belongsTo(Project,{
+    foreignKey: "projectId",
+    as: "project"
+})
 
 
 

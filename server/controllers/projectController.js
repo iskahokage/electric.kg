@@ -29,7 +29,7 @@ class ProjectController{
             const {name} = req.files
             const {projectId} = req.body
             let imgName = uuid.v4() + ".jpg"
-            name.mv(path.resolve(__dirname, '..', 'static', imgName))
+            name.mv(path.resolve(__dirname, '..', 'public/assets/img', imgName))
             let img = await ProjectService.imageUpload({name: imgName, projectId})
             return res.json(img)
         } catch (error) {
