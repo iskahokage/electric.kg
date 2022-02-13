@@ -12,7 +12,10 @@ class ProjectService{
         })
     }
     static delete = async (id)=>{
-        return await Project.destroy({where: {id}})
+        const image = await Project_image.findAll({where: {projectId: id}})
+        const item = await Project.destroy({where: {id}})
+
+        return [image, item]
     }
 
     static imageUpload = async({name, projectId})=>{

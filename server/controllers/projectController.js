@@ -1,7 +1,7 @@
 const ProjectService = require('../services/projectService');
 const path = require('path')
 const uuid = require('uuid')
-
+const fs = require('fs')
 
 class ProjectController{
 
@@ -39,8 +39,16 @@ class ProjectController{
     static delete = async(req,res, next)=>{
         try {
             const {id} = req.params;
-            await ProjectService.delete(id)
-            return res.json(`deleted project with id: ${id}`)
+            let files = await ProjectService.delete(id)
+            for(let i = 0; i < files[0].length; i++){
+                let a = path.resolve(__dirname, '..', 'public/assets/img')
+                let b = files[0][i].name
+                fs.unlink(`${a}/${b}`, (err) => {
+                    if (err) throw err;
+                    console.log(`${a}/${b} was deleted`);
+                    })
+            }
+            res.json({msg: `post with id: ${id}, successfully deleted `})
         } catch (error) {
             
         }
