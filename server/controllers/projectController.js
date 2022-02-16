@@ -29,7 +29,7 @@ class ProjectController{
             const {name} = req.files
             const {projectId} = req.body
             let imgName = uuid.v4() + ".jpg"
-            name.mv(path.resolve(__dirname, '..', 'public/assets/img', imgName))
+            name.mv(path.resolve(__dirname, '..', 'public/assets/img/projects', imgName))
             let img = await ProjectService.imageUpload({name: imgName, projectId})
             return res.json(img)
         } catch (error) {
@@ -41,7 +41,7 @@ class ProjectController{
             const {id} = req.params;
             let files = await ProjectService.delete(id)
             for(let i = 0; i < files[0].length; i++){
-                let a = path.resolve(__dirname, '..', 'public/assets/img')
+                let a = path.resolve(__dirname, '..', 'public/assets/img/projects')
                 let b = files[0][i].name
                 fs.unlink(`${a}/${b}`, (err) => {
                     if (err) throw err;

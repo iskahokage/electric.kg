@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './ContactUs.scss';
 import tgLogo from '../../assets/tg-ico.svg'
 import ig from '../../assets/ig-logo.svg'
-import axios from 'axios';
 
 
 const ContactUs = () => {
@@ -36,7 +35,7 @@ const ContactUs = () => {
             }}>
                 <input type="text" name="" id="form-inputs" required='true' placeholder='Введите имя' />
                 <input type="text" name="" id="form-inputs" required='true' placeholder='Введите номер телефона'/>
-                <textarea name="" id="form-inputs" cols="20" rows="20" placeholder='Напишите что нужно сделать'></textarea>
+                <textarea name="" id="form-inputs" cols="20" rows="20" placeholder='Напишите ваш вопрос'></textarea>
                 <button onClick={()=>postAppeal()}>Отправить</button>
             </form>
         </div>

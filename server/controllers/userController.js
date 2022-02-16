@@ -17,13 +17,22 @@ class UserController{
 
             const{email,password}=req.body;
             
-            const userData = await UserService.login(email,password)
+            const userData = await UserService.login(email, password)
 
             return res.json(userData)
 
 
         } catch (error) {
-            console.error(error)
+            next(error)
+        }
+    }
+
+    static getAll = async(req,res,next)=>{
+        try {
+            const resp = await UserService.getAll()
+            return res.json(resp)
+        } catch (error) {
+            next(error)
         }
     }
 

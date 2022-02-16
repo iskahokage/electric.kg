@@ -30,13 +30,13 @@ class ProductService{
 
     static delete = async(id)=>{
 
-        const product = await Product.findOne({where:{id}});
-        let img = product.dataValues.image;
-        let imgPath = path.resolve(__dirname, '..', 'public/assets/img');
+        // const product = await Product.findOne({where:{id}});
+        // let img = product.dataValues.image;
+        // let imgPath = path.resolve(__dirname, '..', 'public/assets/img');
 
-        fs.unlink(`${imgPath}/${img}`, (err)=>{
-            if (err) throw ErrorService.BadRequest('Product image not found');
-        })
+        // fs.unlink(`${imgPath}/${img}`, (err)=>{
+        //     if (err) throw ErrorService.BadRequest('Product image not found');
+        // })
         
         return await Product.destroy({
             where:{id}

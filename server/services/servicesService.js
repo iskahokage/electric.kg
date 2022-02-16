@@ -9,9 +9,9 @@ class ServicesService {
             name, image
         })
     }
-    static delete = async({_id})=>{
+    static delete = async({id})=>{
         return await Service.deleteOne({
-            _id: _id
+            id
         })
     }
 }

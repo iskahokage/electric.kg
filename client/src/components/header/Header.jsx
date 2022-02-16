@@ -2,7 +2,6 @@ import React from 'react';
 import './Header.scss'
 import logo from '../../assets/logo.svg'
 import { NavLink } from 'react-router-dom';
-import ContactUs from '../contactUs/ContactUs';
 
 const Header = () => {
     return (

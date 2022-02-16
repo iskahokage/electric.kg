@@ -1,9 +1,10 @@
-import React from "react";
-import "./Card.scss";
+import React from 'react';
+import { IMG_API } from '../../consts';
 import Loader from "../loader/Loader";
 
-import { IMG_API } from "../../consts";
-const Card = ({ data }) => {
+
+const ServiceCard = ({data}) => {   
+
     if(data.length === 0) return <Loader/>
     return (
         <div className="card"> 
@@ -16,11 +17,9 @@ const Card = ({ data }) => {
                     />
                 </div>
                 <p className="card-title">{item.name}</p>
-                <p className="card-title">{item.price} сом</p>
             </div>
         ))}
         </div>
-    );
-};
+    )};
 
-export default Card;
+export default ServiceCard;

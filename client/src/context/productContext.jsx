@@ -2,20 +2,17 @@ import axios from 'axios';
 import React, { createContext, useReducer } from 'react';
 import { API } from '../consts';
 
-export const projectContext = createContext();
+export const productsContext = createContext();
 
-const INIT_STATE = {
-    projects: []
+const INIT_STATE={
+    products: []
 }
-
-
-
 const reducer = (state = INIT_STATE, action) => {
     switch (action.type) {
         case "GET_DATA":
             return{
                 ...state,
-                projects: action.payload.data
+                products: action.payload.data
             };
     
         default:
@@ -23,29 +20,30 @@ const reducer = (state = INIT_STATE, action) => {
     }
 }
 
-const ProjectContextProvider = ({children}) => {
+
+const ProductsContextProvider = ({children}) => {
 
     const [state, dispatch] = useReducer(reducer, INIT_STATE)
 
     const getData =  async() =>{
-        const response = await axios.get(`${API}/projects`)
+        const response = await axios.get(`${API}/products`)
         dispatch({
             type: "GET_DATA",
             payload: response
         })
     }
 
-    return (
-        <projectContext.Provider
-            value={{
-                projects: state.projects,
-                getData,
 
+    return (
+        <productsContext.Provider
+            value={{
+                products: state.products,
+                getData
             }}
         >
             {children}
-        </projectContext.Provider>
+        </productsContext.Provider>
     );
 };
 
-export default ProjectContextProvider;
+export default ProductsContextProvider;

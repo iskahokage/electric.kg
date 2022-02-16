@@ -19,6 +19,10 @@ router.post(
     UserController.login
 )
 router.get(
+    '/user',
+    UserController.getAll
+)
+router.get(
     '/activate/:link',
     UserController.activate
 )

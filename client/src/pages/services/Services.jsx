@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
+import ServiceCard from '../../components/serviceCard/ServiceCard';
+import {serviceContext} from '../../context/serviceContext';
 import './Services.scss';
 
 const Services = () => {
+
+    const {services, getData} = useContext(serviceContext)
+
+    
+    useEffect(()=>{
+        getData()
+    }, []) // eslint-disable-line react-hooks/exhaustive-deps
+
     return (
         <div className='container'>
-            services
+            <p className="title">Услуги:</p>
+            <ServiceCard data={services}/>
         </div>
     );
 };

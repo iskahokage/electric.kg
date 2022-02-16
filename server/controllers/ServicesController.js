@@ -8,7 +8,7 @@ class ServicesController{
             const {name} = req.body;
             const {image} = req.files;
             let imgName = uuid.v4() + ".jpg"
-            image.mv(path.resolve(__dirname, '..', 'static', imgName))
+            image.mv(path.resolve(__dirname, '..', 'public/assets/img/services', imgName))
             let post = await ServicesService.create({name, image: imgName});
             return res.json(post)
         } catch (error) {

@@ -5,11 +5,11 @@ import './Projects.scss';
 
 const Projects = () => {
 
-    const {projects, getProjects} = useContext(projectContext)
+    const {projects, getData} = useContext(projectContext)
 
 
     useEffect(()=>{
-        getProjects();
+        getData();
     }, [])
     console.log(projects);
     return (

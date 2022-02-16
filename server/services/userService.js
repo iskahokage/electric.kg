@@ -29,6 +29,7 @@ class UserService {
         user: {
             id: user.id,
             email,
+            password,
         },
       };
     };
@@ -48,14 +49,14 @@ class UserService {
         const tokens = TokenService.generateTokens({
           id: user.id,
           email,
-          role: user.role,
+          password
         });
         return {
           ...tokens,
           user: {
             email,
+            password,
             id: user.id,
-            role: user.role,
           },
         };
       } catch (error) {

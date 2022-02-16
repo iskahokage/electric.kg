@@ -17,7 +17,7 @@ class ProductController {
             const {name, price} = req.body;
             const {image} = req.files;
             let imgName = uuid.v4() + ".jpg"
-            image.mv(path.resolve(__dirname, '..', 'public/assets/img', imgName))
+            image.mv(path.resolve(__dirname, '..', 'public/assets/img/products', imgName))
             const product = await ProductService.create({name, price, image: imgName, })
             return res.json(product)
 
