@@ -2,7 +2,7 @@ const {Telegraf} = require('telegraf');
 const dotenv = require('dotenv').config()
 const pool = require('./db')
 const bot = new Telegraf(process.env.BOT_TOKEN)
-
+const id = process.env.OWNER_ID
 
 
 
@@ -36,6 +36,16 @@ bot.command('what', ctx =>{
 })
 
 bot.command('test', ctx=>{
+
+    bot.telegram.sendMessage(503692935, `asdasd ${ctx.chat.id}`)
+})
+
+const addUser = async (email, password) => {
+    const data = await pool.query(`INSERT INTO users (email, password) VALUES (${email}, ${password}) `)
+}
+
+bot.command('register', ctx => {
+    console.log(ctx)
     bot.telegram.sendMessage(503692935, `asdasd ${ctx.chat.id}`)
 })
 
