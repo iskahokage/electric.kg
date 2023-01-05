@@ -1,0 +1,21 @@
+.footer{
+    background-color: #2196F3;
+    height: 100px;
+    .footer-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100%;
+        a,img{
+            align-self: flex-end;
+            justify-self: flex-start;
+            max-width: 35px;
+            margin-right: 30px;
+        }
+        .copyright{
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+    }
+}
