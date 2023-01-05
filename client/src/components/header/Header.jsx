@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import './Header.scss'
 import logo from '../../assets/logo.svg'
 import { NavLink } from 'react-router-dom';
+import { authContext } from '../../context/authContext';
 
 const Header = () => {
+
+    const {users, isAuth, logout} = useContext(authContext);
+    console.log(users)
     return (
         <div className='header'>
             <div className="logo-container">
@@ -12,11 +16,12 @@ const Header = () => {
                 </NavLink>
             </div>
             <div className="nav-container">      
-                <nav>
+                <nav style={isAuth ? {maxWidth: 350+'px'} : {}}>
                     <NavLink to='/goods'>Товары</NavLink>
                     <NavLink to='/services'>Услуги</NavLink>
-                    <NavLink to='/projects'>Портфолио</NavLink>
-                </nav>
+                    <NavLink to='/projects'>Портфолио</NavLink>  
+                    {isAuth ? <p onClick={()=>logout()}>Выйти</p> : <></>}                            
+                </nav>                
             </div>
         </div>
     );

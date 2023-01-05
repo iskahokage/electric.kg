@@ -16,7 +16,6 @@ const Admin = () => {
         }
         login(authData)
     }
-
     return (
         <div className="container">
             <div className="admin-container">

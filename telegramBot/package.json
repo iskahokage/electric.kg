@@ -12,7 +12,6 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^15.0.0",
-    "pg": "^8.7.1",
     "telegraf": "^4.6.0"
   },
   "devDependencies": {

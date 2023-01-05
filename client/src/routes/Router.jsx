@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Admin from '../components/admin/Admin';
 import Footer from '../components/footer/Footer';
 import Header from '../components/header/Header';
-import AuthContextProvider from '../context/authContext';
+import AuthContextProvider, { authContext } from '../context/authContext';
 import ProductsContextProvider from '../context/productContext';
 import ProjectContextProvider from '../context/projectContext';
 import ServiceContextProvider from '../context/serviceContext';
@@ -14,7 +14,8 @@ import Projects from '../pages/projects/Projects';
 import Services from '../pages/services/Services';
 
 const Router = () => {
-
+    
+    
     return (
         <BrowserRouter>
         <AuthContextProvider>

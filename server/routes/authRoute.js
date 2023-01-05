@@ -14,6 +14,11 @@ router.post(
     UserController.registration
 );
 
+router.get(
+    '/logout',
+    UserController.logout
+)
+
 router.post(
     '/login',
     UserController.login

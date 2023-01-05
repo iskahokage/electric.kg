@@ -10,7 +10,8 @@ class UserController{
         } catch (error) {
           next(error);
         }
-      };
+    };
+
 
     static login = async (req,res,next)=>{
         try {
@@ -19,9 +20,31 @@ class UserController{
             
             const userData = await UserService.login(email, password)
 
+            const {refreshToken} = userData;
+
+            delete userData.refreshToken
+            res.cookie('refreshToken', refreshToken, {
+                maxAge: 1000 * 60 * 60 * 72,
+                httpOnly: true,
+            })
+
+            console.log(userData)
             return res.json(userData)
 
 
+        } catch (error) {
+            next(error)
+        }
+    }
+
+    static logout = async(req, res, next) => {
+        try {
+            res.cookie('refreshToken', '', {
+                maxAge: 0,
+                httpOnly: true,
+            })
+            res.send(false)
+            
         } catch (error) {
             next(error)
         }
