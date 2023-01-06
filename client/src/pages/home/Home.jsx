@@ -1,5 +1,4 @@
 import React from "react";
-import "./Home.scss";
 import img1 from "../../assets/img1.svg";
 import img2 from "../../assets/img2.svg";
 import img3 from "../../assets/img3.svg";

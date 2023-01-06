@@ -1,7 +1,6 @@
 import React from "react";
 import { IMG_API } from "../../consts";
 import Loader from "../loader/Loader";
-import "./ProjectCard.scss"; 
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";

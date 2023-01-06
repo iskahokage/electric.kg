@@ -1,15 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import './variables.scss';
 @import './components/header/Header.scss';
 @import './components/card/Card.scss';
 @import './pages/home/Home.scss';
+@import './components/addForm/AddForm.scss';
 @import './components/footer/Footer.scss';
 @import './components/contactUs/ContactUs.scss';
+@import './components/loader/Loader';
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Comfortaa', cursive;
+    font-family: 'Montserrat', cursive;
 }
 .App{
     position: relative;
@@ -27,4 +30,3 @@
     min-height: calc(100vh - 260px);
     padding-bottom: 50px;
 }
-$mainbgc: #2196F3;

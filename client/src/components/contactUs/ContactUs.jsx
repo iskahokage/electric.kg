@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './ContactUs.scss';
 import tgLogo from '../../assets/tg-ico.svg'
 import ig from '../../assets/ig-logo.svg'
 

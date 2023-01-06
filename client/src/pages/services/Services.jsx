@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import ServiceCard from '../../components/serviceCard/ServiceCard';
 import {serviceContext} from '../../context/serviceContext';
-import './Services.scss';
 
 const Services = () => {
 

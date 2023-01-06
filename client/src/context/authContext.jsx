@@ -26,7 +26,7 @@ const reducer = (state=INIT_STATE, action) =>{
             return{
                 ...state,
                 users: action.payload?.user,
-                isAuth: action.payload.isAuth
+                isAuth: action.payload?.isAuth
             }
         default:
             break;

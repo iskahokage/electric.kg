@@ -1,0 +1,73 @@
+
+.addForm {
+    max-width: 600px;
+}
+.fileInput {
+    display: none;
+}
+.addFormButtonsContainer {
+    display: flex;
+    justify-content: space-around;
+
+    button {
+        background-color: transparent;
+        padding: 0.75em 1.5em;
+        line-height: 1.5em;
+        border: 0;
+        background-color: $mainbgc;
+        color: #fff;
+        font-weight: bold;
+        text-transform: uppercase;
+        width: 250px;
+        display: inline-block;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+.group {
+    position: relative;
+    padding-bottom: 1em;
+    label {
+        position: absolute;
+        pointer-events: none;
+        left: 0.5em;
+        top: 1em;
+        transition: 0.2s ease all;
+        color: #ccc;
+    }
+    input[type="text"] {
+        background-color: transparent;
+        padding: 0.75em 1.5em;
+        line-height: 1.5em;
+        border: 0;
+        display: block;
+        width: 100%;
+        margin-top: 2em;
+        border-bottom: 1px solid $mainbgc;
+        background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0) 96%,
+            $mainbgc 4%
+        );
+        background-position: -100em 0;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        padding-left: 0.5em;
+        transition: 0.3s cubic-bezier(0.64, 0.09, 0.08, 1) all;
+        &:focus,
+        &:valid {
+            background-position: 0 0;
+            ~ label {
+                color: $mainbgc;
+                font-size: 0.875em;
+                top: -1.5em;
+            }
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+}

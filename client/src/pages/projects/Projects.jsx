@@ -1,8 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import ProjectCard from '../../components/projectCard/ProjectCard';
 import { projectContext } from '../../context/projectContext';
-import './Projects.scss';
-
 const Projects = () => {
 
     const {projects, getData} = useContext(projectContext)

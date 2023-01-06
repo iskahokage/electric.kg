@@ -42,6 +42,7 @@ bot.command('register', ctx => {
         data = ctx.message.text
         let a = data.split(' ')
         addUser(a[0], a[1])
+        ctx.reply('Пользователь создан')
     })
     
     // console.log(email)

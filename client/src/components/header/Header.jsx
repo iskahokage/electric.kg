@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from 'react';
-import './Header.scss'
 import logo from '../../assets/logo.svg'
 import { NavLink } from 'react-router-dom';
 import { authContext } from '../../context/authContext';

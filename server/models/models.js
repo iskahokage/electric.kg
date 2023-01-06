@@ -54,11 +54,6 @@ const Appeal = sequelize.define("appeal", {
 })
 
 
-User.hasOne(Product)
-Product.belongsTo(User)
-
-User.hasOne(Service)
-Service.belongsTo(User)
 
 Project.hasMany(Project_image, {as: "project_images", onDelete: 'cascade'})
 Project_image.belongsTo(Project,{

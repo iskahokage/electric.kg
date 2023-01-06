@@ -1,7 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { authContext } from "../../context/authContext";
-import "./Admin.scss";
-
 
 
 const Admin = () => {

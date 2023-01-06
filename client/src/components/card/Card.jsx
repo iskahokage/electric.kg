@@ -1,5 +1,4 @@
 import React from "react";
-import "./Card.scss";
 import Loader from "../loader/Loader";
 
 import { IMG_API } from "../../consts";
