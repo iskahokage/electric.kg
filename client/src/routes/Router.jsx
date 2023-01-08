@@ -13,9 +13,7 @@ import Products from '../pages/products/Products';
 import Projects from '../pages/projects/Projects';
 import Services from '../pages/services/Services';
 
-const Router = () => {
-    
-    
+const Router = () => {    
     return (
         <BrowserRouter>
         <AuthContextProvider>

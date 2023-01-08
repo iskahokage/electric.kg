@@ -1,4 +1,6 @@
 import React, { useContext, useEffect } from 'react';
+import AddForm from '../../components/addForm/AddForm';
+import Card from '../../components/card/Card';
 import ServiceCard from '../../components/serviceCard/ServiceCard';
 import {serviceContext} from '../../context/serviceContext';
 
@@ -13,8 +15,9 @@ const Services = () => {
 
     return (
         <div className='container'>
+            <AddForm page={'услугу'} type={'service'}/>
             <p className="title">Услуги:</p>
-            <ServiceCard data={services}/>
+            <Card data={services}/>
         </div>
     );
 };

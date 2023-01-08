@@ -5,8 +5,7 @@ import { authContext } from '../../context/authContext';
 
 const Header = () => {
 
-    const {users, isAuth, logout} = useContext(authContext);
-    console.log(users)
+    const {isAuth, logout} = useContext(authContext);
     return (
         <div className='header'>
             <div className="logo-container">

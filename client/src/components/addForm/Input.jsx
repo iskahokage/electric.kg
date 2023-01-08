@@ -1,10 +1,10 @@
 import React, { forwardRef } from "react";
 
-const Input = forwardRef(({field_name, type}, ref) => {
+const Input = forwardRef(({field_name, type, onChange, value, name}, ref) => {
     return (
         <div className={type === 'file' ? 'fileInput' : 'group'}>
-            <input ref={ref} id="name" type={type} required />
-            <label for="name">{field_name}</label>
+            <input value={value} onChange={onChange} ref={ref} id="name" type={type} name={name} required/>
+            <label htmlFor="name">{field_name}</label>
         </div>            
     );
 });

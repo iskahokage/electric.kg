@@ -9,7 +9,6 @@ const Projects = () => {
     useEffect(()=>{
         getData();
     }, [])
-    console.log(projects);
     return (
         <div className='container'>
             <p className='title'>Выполненные оъекты:</p>

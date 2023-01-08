@@ -9,22 +9,23 @@
     display: flex;
     justify-content: space-around;
 
-    button {
-        background-color: transparent;
-        padding: 0.75em 1.5em;
-        line-height: 1.5em;
-        border: 0;
-        background-color: $mainbgc;
-        color: #fff;
-        font-weight: bold;
-        text-transform: uppercase;
-        width: 250px;
-        display: inline-block;
-        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
-        &:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
-        }
+
+}
+.button {
+    background-color: transparent;
+    padding: 0.75em 1.5em;
+    line-height: 1.5em;
+    border: 0;
+    background-color: $mainbgc;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 250px;
+    display: inline-block;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
     }
 }
 .group {

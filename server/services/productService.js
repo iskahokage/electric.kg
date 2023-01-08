@@ -9,9 +9,13 @@ class ProductService{
         return await Product.findAll();
     }
 
-    static create = async({name, price, image})=>{
+    static getOne = async(id)=> {
+        return await Product.findOne({where: {id}})
+    }
+
+    static create = async({type, brand, description, price, image })=>{
         return await Product.create({
-            name, price, image
+            type, brand, description, price, image 
         })
     }
     

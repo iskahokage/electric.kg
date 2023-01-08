@@ -12,13 +12,25 @@ class ProductController {
             next(error)
         }
     }
+
+    static getOne = async(req,res,next) => {
+        const {id} = req.params;
+        try {
+            const product = await ProductService.getOne(id)
+            return res.json(product)
+        } catch (error) {
+            next(error)
+        }
+    }
+
     static create = async(req,res,next)=>{
         try {
-            const {name, price} = req.body;
+            console.log(req.body)
+            const {type, brand, price, description,} = req.body;
             const {image} = req.files;
             let imgName = uuid.v4() + ".jpg"
             image.mv(path.resolve(__dirname, '..', 'public/assets/img/products', imgName))
-            const product = await ProductService.create({name, price, image: imgName, })
+            const product = await ProductService.create({type, brand, description, price, image: imgName})
             return res.json(product)
 
         } catch (error) {

@@ -32,7 +32,8 @@ app.use(errorMiddleware)
 const run = async () => {
     try {
         await sequelize.authenticate();
-        await sequelize.sync();
+        await sequelize.sync({alter: true,
+        force: true});
         app.listen(PORT, '0.0.0.0' , () => {
             console.log(`server running on port: ${PORT}`);
         });

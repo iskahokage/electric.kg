@@ -11,10 +11,6 @@ const ServiceCard = ({data}) => {
         {data.map((item)=>(
             <div className="card-container" key={item.id}>
                 <div className="image-container">
-                    <img
-                        src={ IMG_API + item.image}
-                        alt=""
-                    />
                 </div>
                 <p className="card-title">{item.name}</p>
             </div>

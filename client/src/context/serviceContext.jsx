@@ -32,13 +32,17 @@ const ServiceContextProvider = ({children}) => {
             payload: response
         })
     }
+    const uploadService = async(fd) => {
+        await axios.post(`${API}/services`, fd)
+    }
 
 
     return (
         <serviceContext.Provider
         value={{
             services: state.services,
-            getData
+            getData,
+            uploadService
         }}
         >
             {children}

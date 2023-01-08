@@ -7,6 +7,7 @@
 @import './components/footer/Footer.scss';
 @import './components/contactUs/ContactUs.scss';
 @import './components/loader/Loader';
+@import './components/admin/Admin';
 
 *{
     margin: 0;
@@ -24,7 +25,7 @@
         font-weight: 700;
         padding: 40px 0;
     }
-    max-width: 1200px;
+    max-width: 1500px;
     width: 100%;
     margin: 0 auto;
     min-height: calc(100vh - 260px);
