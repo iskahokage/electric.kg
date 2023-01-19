@@ -8,12 +8,16 @@
 @import './components/contactUs/ContactUs.scss';
 @import './components/loader/Loader';
 @import './components/admin/Admin';
+@import './components/basketCard/BasketCard';
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', cursive;
+}
+body{
+    background-color: $containerBgc;
 }
 .App{
     position: relative;
@@ -25,7 +29,7 @@
         font-weight: 700;
         padding: 40px 0;
     }
-    max-width: 1500px;
+    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
     min-height: calc(100vh - 260px);

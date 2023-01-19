@@ -1,0 +1,68 @@
+.basketCard{
+    max-width: 585px;
+    width: 100%;
+    height: 240px;
+    background-color: #fff; 
+    padding: 0 10px;
+    box-shadow: 0px 0px 8px #e6e5e5;
+    border-radius: 15px;
+    .basketCardContainer{
+        padding: 15px 20px 20px 20px;
+        .row{
+            display: flex;
+            justify-content: space-between;
+            height: 200px;
+            .imageContainer{
+                width: 33.3%;
+                display: flex;
+                align-items: center;
+                
+            }
+            .detailsContainer{
+                width: 66.7%;
+                h4{
+                    font-size: 18px;
+                }
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100%;
+                .row{
+                    height: auto;
+                }
+                .quantityControl{
+                    display: flex;
+                    justify-content: space-between;
+                    &__plus{
+                        border-radius: 0 10px 10px 0;
+                        background-color: #000;
+                        width: 30px;
+                        height: 30px;
+                        color: $mainbgc;
+                        font-size: 28px;
+                        text-align: center;
+                        line-height: 30px;
+                    }
+                    &__minus{
+                        border-radius: 10px 0 0 10px;
+                        background-color: #000;
+                        width: 30px;
+                        height: 30px;
+                        color: $mainbgc;
+                        font-size: 28px;
+                        text-align: center;
+                        line-height: 26px;
+                    }
+                    input{
+                        max-width: 30px;
+                        height: 30px;
+                        width: auto;
+                        outline: none;
+                        border: none;
+                        padding: 1px 5px;
+                    }
+                }
+            }
+        }
+    }
+}

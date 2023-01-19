@@ -14,10 +14,11 @@ const Header = () => {
                 </NavLink>
             </div>
             <div className="nav-container">      
-                <nav style={isAuth ? {maxWidth: 350+'px'} : {}}>
+                <nav style={isAuth ? {maxWidth: 450+'px'} : {}}>
                     <NavLink to='/goods'>Товары</NavLink>
                     <NavLink to='/services'>Услуги</NavLink>
                     <NavLink to='/projects'>Портфолио</NavLink>  
+                    <NavLink to='/cart'>Корзина</NavLink>
                     {isAuth ? <p onClick={()=>logout()}>Выйти</p> : <></>}                            
                 </nav>                
             </div>

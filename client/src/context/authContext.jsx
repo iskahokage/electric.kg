@@ -90,7 +90,7 @@ const AuthContextProvider = ({children}) => {
             type: "CHECK_USER",
             payload: data
         })
-        navigate('/goods')
+        navigate('/')
 
 
     }

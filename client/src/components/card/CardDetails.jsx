@@ -12,7 +12,6 @@ const CardDetails = ({ data, setModal, modalType }) => {
     const [editedItem, setEditedItem] = useState(data);
 
     useEffect(() => {
-        console.log(editedItem);
         setEditedItem(data);
     }, [data]);
 
@@ -39,7 +38,6 @@ const CardDetails = ({ data, setModal, modalType }) => {
     }
 
     const detailType = () => {
-        console.log(data)
         return (
             <div>
                 <h2>{data.brand}</h2>

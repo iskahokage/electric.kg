@@ -6,15 +6,27 @@ import { authContext } from "../../context/authContext";
 import Button from "../addForm/Button";
 import CardDetails from "./CardDetails";
 import { productsContext } from "../../context/productContext";
+import { cartContext } from "../../context/cartContext";
 const Card = ({ data }) => {
     const { isAuth } = useContext(authContext);
     const { getOneProduct, oneProduct, deleteProduct, productToEdit } =
         useContext(productsContext);
+
+    const {addInCart, itemsInCart, } = useContext(cartContext)
+
     const [modal, setModal] = useState({ isOpen: false, type: null });
 
     useEffect(() => {
-        console.log("as");
-    }, [modal]);
+    }, [modal, itemsInCart]);
+    
+    
+
+    // const checkItemInCart = () => {
+    //     if(itemsInCart.products){
+
+    //     }
+    // }
+    console.log(itemsInCart)
 
     const handleDetailsClick = (id) => {
         console.log(id);
@@ -26,6 +38,12 @@ const Card = ({ data }) => {
         setModal({ isOpen: true, type: "edit" });
         getOneProduct(id, "edit");
     };
+    
+
+    const handleCartClick = (product) => {
+        addInCart(product)
+        console.log(itemsInCart)
+    }
 
     if (data.length === 0) return <Loader />;
 
@@ -64,7 +82,7 @@ const Card = ({ data }) => {
                                         }
                                         text={"Подробнее"}
                                     />
-                                    <Button text={"В корзину"} />
+                                    <Button onClick={()=> handleCartClick(item)} text={ true ? "В корзину" : "Убрать из корзины"} />
                                     <Button text={"Купить"} />
                                 </div>
                             </div>

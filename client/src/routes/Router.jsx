@@ -4,9 +4,11 @@ import Admin from '../components/admin/Admin';
 import Footer from '../components/footer/Footer';
 import Header from '../components/header/Header';
 import AuthContextProvider, { authContext } from '../context/authContext';
+import CartContextProvider from '../context/cartContext';
 import ProductsContextProvider from '../context/productContext';
 import ProjectContextProvider from '../context/projectContext';
 import ServiceContextProvider from '../context/serviceContext';
+import Cart from '../pages/cart/Cart';
 // import Goods from '../pages/goods/Goods';
 import Home from '../pages/home/Home';
 import Products from '../pages/products/Products';
@@ -17,12 +19,15 @@ const Router = () => {
     return (
         <BrowserRouter>
         <AuthContextProvider>
+        <CartContextProvider>
         <ProjectContextProvider>
         <ProductsContextProvider>
         <ServiceContextProvider>
+        
             <Header/>
             <Routes>
                 <Route path='/' element={<Home/>}/>
+                <Route path='/cart' element={<Cart/>}/>
                 <Route path='/goods' element={<Products/>}/>
                 <Route path='/projects' element={<Projects/>}/>
                 <Route path='/services' element={<Services/>}/>
@@ -32,6 +37,7 @@ const Router = () => {
         </ServiceContextProvider>
         </ProductsContextProvider>
         </ProjectContextProvider>
+        </CartContextProvider>
         </AuthContextProvider>
         </BrowserRouter>
     );
