@@ -1,10 +1,11 @@
-const {Telegraf} = require('telegraf');
-const dotenv = require('dotenv').config()
+import {Telegraf} from 'telegraf';
+import dotenv from 'dotenv';
+dotenv.config()
 const bot = new Telegraf(process.env.BOT_TOKEN)
 const API = process.env.API;
 const id = process.env.OWNER_ID
 
-
+import fetch from 'node-fetch';
 
 console.log('BOT STARTED')
 

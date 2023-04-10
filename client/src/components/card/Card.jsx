@@ -7,6 +7,8 @@ import Button from "../addForm/Button";
 import CardDetails from "./CardDetails";
 import { productsContext } from "../../context/productContext";
 import { cartContext } from "../../context/cartContext";
+
+
 const Card = ({ data }) => {
     const { isAuth } = useContext(authContext);
     const { getOneProduct, oneProduct, deleteProduct, productToEdit } =
@@ -19,6 +21,16 @@ const Card = ({ data }) => {
     useEffect(() => {
     }, [modal, itemsInCart]);
     
+    const checkItemInCart = (id) => {
+        if(itemsInCart.products){
+            const foundItem = itemsInCart.products.find((service) => {
+                console.log(service)
+                service.item.id === id
+            })
+
+            return foundItem ? 'Убрать из корзины' : 'Добавить в корзину';
+        }
+      };
     
 
     // const checkItemInCart = () => {
@@ -82,7 +94,7 @@ const Card = ({ data }) => {
                                         }
                                         text={"Подробнее"}
                                     />
-                                    <Button onClick={()=> handleCartClick(item)} text={ true ? "В корзину" : "Убрать из корзины"} />
+                                    <Button onClick={()=> handleCartClick(item)} text={checkItemInCart(item.id)} />
                                     <Button text={"Купить"} />
                                 </div>
                             </div>
